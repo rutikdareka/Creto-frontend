@@ -1,0 +1,71 @@
+@import "../global.scss";
+
+.navbar_wrapper {
+  max-height: 70px;
+  height: 70px;
+  border-bottom: 1px solid rgba(68, 68, 68, 0.2666666667);
+  position: sticky;
+  top: 0px;
+  background-color: white;
+
+  .sub_wrapper {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .heading_wraper {
+    display: flex;
+    height: 54px;
+    margin: auto;
+    max-width: 45%;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .image_creto img {
+    height: 55px;
+    border-radius: 50%;
+    width: 60px;
+  }
+
+  .user_img {
+    display: flex;
+    align-items: center;
+    height: 104%;
+    position: relative;
+  }
+
+  .user_img avatar {
+    height: 55px;
+    border-radius: 50%;
+    width: 60px;
+  }
+
+  ._2dn5Ncenn0BSD4tCSmxQhA {
+    fill: #46d160;
+    position: absolute;
+    right: 16px;
+    bottom: 7px;
+  }
+}
+
+// media quries
+@media (min-width: 1000px) and (max-width: 1600px) {
+  .heading_wraper {
+    min-width: 70%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  .heading_wraper {
+    min-width: 70%;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 600px) {
+  .heading_wraper {
+    min-width: 90%;
+  }
+}

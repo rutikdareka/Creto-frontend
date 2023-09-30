@@ -1,0 +1,80 @@
+$border-radius: 50%;
+
+.right_site_container {
+    width: 31vh;
+    padding: 9px;
+
+    .right_sub {
+        border-radius: 10px;
+        border: 1px solid #4444;
+        position: sticky;
+        top: 89px;
+    }
+
+    .users {
+        display: flex;
+        padding: 6px;
+    }
+
+    .text {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    a img {
+        height: 46px;
+        width: 50px;
+        border-radius: $border-radius;
+    }
+
+    a p {
+        font-size: 14px;
+    }
+
+    .text {
+        padding: 10px;
+    }
+
+    .btn button {
+        height: 32px;
+        width: 71px;
+        background: black;
+        border: none;
+        color: white;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+
+    .btn {
+        margin-left: auto;
+    }
+
+    .users:hover,
+    .seeall:hover {
+        background-color: rgb(0, 0, 0, 0.03);
+    }
+
+    .suggested_users {
+        margin-top: 10px;
+    }
+
+    .seeall {
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .seeall a {
+        display: flex;
+        justify-content: center !important;
+    }
+}

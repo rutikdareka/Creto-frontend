@@ -1,0 +1,50 @@
+@import "../global.scss";
+
+$landing-maxwidth: 50%;
+
+.wrapper_landing {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.message_sub_wrapper {
+  min-width: 55%;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+  font-family: semibold_inter;
+}
+
+.two_factor_msg {
+  display: flex;
+  max-width: 100%;
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .message_sub_wrapper {
+    min-width: 70%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .message_sub_wrapper {
+    min-width: 90%;
+    width: 90%;
+  }
+
+  .left_container {
+    display: none;
+  }
+
+  .small {
+    display: block;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+  .message_sub_wrapper {
+    min-width: 80%;
+    width: 80%;
+  }
+}

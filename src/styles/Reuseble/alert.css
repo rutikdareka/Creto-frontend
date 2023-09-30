@@ -1,0 +1,21 @@
+/* alert.css */
+.alert {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: #fff;
+    z-index: 1000;
+    font-family: bold_inter;
+  }
+  
+  .alert-danger {
+    background-color: #212121;
+  }
+  
+  .alert-positive {
+    background-color: #4caf50;
+  }
+  

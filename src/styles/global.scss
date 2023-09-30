@@ -1,0 +1,68 @@
+@import "./fonts.scss";
+
+$logo-img-site-height: 50px;
+
+// Brand colors
+$brand-primary-color: #097bed;
+$brand-secondary-color: #097bed;
+$brand-primary-background: #ffffff;
+$brand-secondary-background: #fafafa;
+$brand-tertair-background: #f2f2f2;
+
+// Fonts size variables
+$small-font-size: 12px;
+$regular-font-size: 13px;
+$medium-font-size: 14px;
+$extramedium-font-size: 16px;
+$large-font-size: 20px;
+$extralarge-font-size: 30px;
+$ultralarge-font-size: 70px;
+// Fonts color variables
+$primary-tab-color: #1d1d1d;
+$primary-color: #212121; //optional #030303
+$primary-content-color: #282828;
+$secondary-content-color: #424245;
+
+// Borders
+$primary_border_color: #ededed;
+$secondary_border_color: #e5e5e5;
+
+// Hover colors
+$leftnav-hover-color: rgb(231, 233, 234, 0.1); // Defualt configuration
+
+@import "./fonts.scss";
+
+input {
+  outline: none;
+  border: none;
+  height: 35px;
+  font-size: 14px;
+}
+
+input[type="input"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  // border: 1px solid #f4cd81 !important;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+h3,
+h2,
+p,
+h4,
+h5,
+h6 {
+  margin: unset;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  min-width: 300px;
+  margin: auto;
+}

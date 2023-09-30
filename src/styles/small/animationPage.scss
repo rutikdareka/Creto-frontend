@@ -1,0 +1,49 @@
+/* Styles for the loading screen */
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    /* LinkedIn's primary blue color */
+    animation: fade-out 2s ease-in-out forwards;
+}
+
+/* Styles for the loading icon (you can replace this with your own icon) */
+.loading-icon {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+
+/* Styles to hide the content until the animation completes */
+.content {
+    display: none;
+    /* Add other styles for your content as needed */
+}
+
+/* Keyframes for the loading animation */
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+        display: none;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

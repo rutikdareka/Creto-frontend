@@ -1,0 +1,72 @@
+.otp_container {
+    width: 26vh;
+    margin: auto;
+    margin-top: auto;
+    margin-top: 153px;
+    border: 1px solid #4444;
+    padding: 57px;
+    animation: card_reflected .4s ease-in-out;
+    font-family: semibold_inter;
+}
+
+.vsdsd {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 19px;
+}
+
+.gfrgrfg {
+    padding-bottom: 30px;
+    font-size: 15px;
+    font-family: ABCFavorit, Arial, Helvetica, sans-serif;
+}
+
+.go_back_signup {
+    font-family: ABCFavorit, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding-bottom: 29px;
+}
+
+.otp_input {
+    margin-bottom: 20px;
+}
+
+.submit_otp {
+    button {
+        width: 100%;
+        color: white;
+        background-color: #1967D2;
+        border: 1px solid #4444;
+        align-items: center;
+        justify-content: center;
+        padding: 9px;
+        font-size: 15px;
+        border-radius: 50px;
+        cursor: pointer;
+        height: 42px;
+        font-family: semibold_inter;
+    }
+}
+
+
+.resend_otp_btn {
+    color: #757577;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  
+    button {
+    border: none;
+    outline:none;
+    padding:12px 0px 0px 0px;
+    background-color:white;
+    color:#1967D2;
+    font-family: semibold_inter;
+    }
+}
+
+#write {
+    display: none;
+    color: red;
+}

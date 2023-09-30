@@ -1,0 +1,11 @@
+.explore_comp {
+    border-left: 1px solid #4444;
+    border-right: 1px solid #4444;
+    padding: 10px;
+    max-width: 550px;
+}
+
+.search_container {
+    padding: 10px;
+    text-align: center;
+}
