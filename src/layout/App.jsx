@@ -1,32 +1,33 @@
-import { Routes, Route } from "react-router-dom";
-import Signup from "./pages/CreateUser";
-import Otpvarification from "./pages/Otpvarification";
-import Login from "./pages/Login";
-import SendMail from "./pages/SendMail";
-import ForgotPassword from "./pages/ForgotPassword";
-import Home from "./pages/Home";
-import Inform from "./pages/Inform";
-import Profile from "./pages/Profile";
-import EditProfile from "./components/Profile/EditProfile";
-import Explore from "./pages/Explore";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import Signup from "../pages/CreateUser";
+import Otpvarification from "../pages/Otpvarification";
+import Login from "../pages/Login";
+import SendMail from "../pages/SendMail";
+import ForgotPassword from "../pages/ForgotPassword";
+import Home from "../pages/Home";
+import Inform from "../pages/Inform";
+import Profile from "../pages/Profile";
+import EditProfile from "../components/Profile/EditProfile";
+import Explore from "../pages/Explore";
 import { useState, useContext, useEffect } from "react";
-import Protected from "./components/ProtectedRoute";
-import SuccessInform from "./pages/SuccessInform";
-import Message from "./pages/Message";
-import Context from "../src/context/cretoContext";
-import "../src/styles/global.scss";
-import AnimationFirst from "./components/AnimationFirst";
-import Sapratechat from "./components/message/components/Sapratechat";
-import { GetTokenFromCoockies } from "./helper/authhelper";
+import Protected from "../components/ProtectedRoute";
+import SuccessInform from "../pages/SuccessInform";
+import Message from "../pages/Message";
+import Context from "../context/cretoContext";
+import "../../src/styles/global.scss";
+import AnimationFirst from "../components/AnimationFirst";
+import Sapratechat from "../components/message/components/Sapratechat";
+import { GetTokenFromCoockies } from "../helper/authhelper";
 
 function App() {
   const [isSignedIn, setisSignedIn] = useState(GetTokenFromCoockies());
-  console.log(isSignedIn);
   const context = useContext(Context);
-  const { connect, Onlineusers } = context;
+
+  const { connect } = context;
+
   useEffect(() => {
     connect();
-  }, [sessionStorage.getItem("session_id")]);
+  }, [localStorage.getItem("session_id")]);
 
   const [animate, setanimate] = useState(false);
 
@@ -41,7 +42,7 @@ function App() {
   });
 
   ws.addEventListener("message", (data) => {
-    console.log(data.data);
+    // console.log(data.data);
   });
 
   return (

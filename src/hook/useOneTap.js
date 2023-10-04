@@ -43,7 +43,7 @@ const useGoogleOneTapLogin = (clientId) => {
       console.log(Converdata);
       if (Converdata?.success) {
         SetTokenFromCoockies(Converdata?.authtoken);
-        sessionStorage.setItem("session_id", Converdata?.result?.id);
+        localStorage.setItem("session_id", Converdata?.result?.id);
         setTimeout(() => {
           window.location.replace("/");
         }, 300);

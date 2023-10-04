@@ -1,7 +1,12 @@
 import { Avatar, Box, Button, TextField } from "@mui/material";
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../../../styles/message/message.scss";
-import { Createchat, Searching } from "../../../services/Apis";
+import {
+  Createchat,
+  Searching,
+  Getuserchats,
+} from "../../../services/apis/Apis";
+
 import Showusers from "./Showusers";
 import Loader from "../../Loader";
 import { ToastContainer, toast } from "react-toastify";
@@ -33,35 +38,12 @@ function Contact() {
     }
   }, [keyword]);
 
-  const getuserChats = async () => {
-    try {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token": GetTokenFromCoockies(),
-        },
-      };
-
-      let url = `http://localhost:5000/api/v1/message/get-contact`;
-      await axios
-        .get(url, config)
-        .then((data) => {
-          if (data.data) {
-            setcontact(data.data);
-          } else {
-            setcontact([]);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    getuserChats();
+    async function getdata() {
+      const data = await Getuserchats();
+      setcontact(data);
+    }
+    getdata();
   }, [contact, deletechat]);
 
   const deletedrop = async (e) => {

@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { loginfunction } from "../services/Apis";
+import { loginfunction } from "../services/apis/Apis";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Button from "../components/small/Button";
 import { useGoogleLogin } from "@react-oauth/google";
-import { googleloginfunction } from "../services/Apis";
+import { googleloginfunction } from "../services/apis/Apis";
 import Loader from "../components/Loader";
 import { SetTokenFromCoockies } from "../helper/authhelper";
 import { TextField } from "@mui/material";
@@ -44,7 +44,7 @@ function Login() {
     }, 1000);
     if (data?.success) {
       SetTokenFromCoockies(data?.authtoken);
-      sessionStorage.setItem("session_id", data?.result?.id);
+      localStorage.setItem("session_id", data?.result?.id);
       const error = document.getElementById("login_errors");
       const componentHtml = ReactDOMServer.renderToString(
         <Alert type={"positive"} message={"Successful login"} />
@@ -83,7 +83,7 @@ function Login() {
       console.log(data);
       if (data?.success) {
         SetTokenFromCoockies(data?.authtoken);
-        sessionStorage.setItem("session_id", data?.result?.id);
+        localStorage.setItem("session_id", data?.result?.id);
         const error = document.getElementById("login_errors");
         const componentHtml = ReactDOMServer.renderToString(
           <Alert type={"positive"} message={"Successful login"} />
@@ -166,10 +166,7 @@ function Login() {
             </form>
           </div>
         </div>
-        <p id="login_errors">
-          {}
-          {/* <Alert type={"positive"} message={"hi"} /> */}
-        </p>
+        <p id="login_errors"></p>
       </div>
     </>
   );

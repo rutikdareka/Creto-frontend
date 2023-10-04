@@ -24,7 +24,7 @@ function Otpvarification() {
       },
       body: JSON.stringify({
         otp: otp,
-        id: sessionStorage.getItem("session_id"),
+        id: localStorage.getItem("session_id"),
       }),
     });
     const json = await check.json();

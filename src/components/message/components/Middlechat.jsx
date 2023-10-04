@@ -7,8 +7,9 @@ import Context from "../../../context/cretoContext";
 import Messagesloader from "../../loaders/Messagesloader";
 import ShowMessages from "./ShowMessages";
 import axios from "axios";
-import { GetMessages } from "../../../api/services/messageService";
+// import { GetMessages } from "../../../api/services/messageService";
 import { getUserSessionid } from "../../../helper/authhelper";
+import { GetMessages } from "../../../services/apis/Apis";
 
 function Middlechat() {
   const [isTyping, setisTyping] = useState(false);
@@ -50,33 +51,17 @@ function Middlechat() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   async function getMsg() {
-  //     const data = await GetMessages(conversation.id, getUserSessionid());
-  //     console.log(data);
-  //   }
-  //   getMsg();
-  // }, [conversation.id]);
-
-  console.log(conversation.id);
-
-  async function getdata() {
-    const data = await fetch(
-      `http://localhost:5000/api/v1/message/getMsg?user1=${
-        conversation.id
-      }&user2=${sessionStorage.getItem("session_id")}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const json = await data.json();
-    console.log(json);
-  }
-
-  getdata();
+  useEffect(() => {
+    async function getMsg() {
+      let obj = {
+        user1: conversation.id,
+        user2: localStorage.getItem("session_id"),
+      };
+      const data = await GetMessages(obj);
+      console.log(data);
+    }
+    getMsg();
+  }, [conversation.id]);
 
   return (
     <>

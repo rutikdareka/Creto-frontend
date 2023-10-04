@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Avatar } from "@mui/material";
 import Input from "../../small/Input";
 import Addchat from "./Addchat";
-import { Createchat, Searching, createrecent } from "../../../services/Apis";
+import {
+  Createchat,
+  Searching,
+  createrecent,
+} from "../../../services/apis/Apis";
 import RecentSearch from "./RecentSearch";
 
 function CreatechatDrop() {

@@ -3,10 +3,10 @@ import "../styles/auth.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import { signupfunction } from "../services/Apis";
+import { signupfunction } from "../services/apis/Apis";
 import Button from "../components/small/Button";
 import { useGoogleLogin } from "@react-oauth/google";
-import { googleloginfunction } from "../services/Apis";
+import { googleloginfunction } from "../services/apis/Apis";
 import { SetTokenFromCoockies } from "../helper/authhelper";
 import { TextField } from "@mui/material";
 import Googlelogin from "../components/small/Googlelogin";
@@ -90,7 +90,7 @@ function Signup() {
     setTimeout(() => {
       setloader(true);
     }, 1000);
-    sessionStorage.setItem("session_id", newuser?.result?.id);
+    localStorage.setItem("session_id", newuser?.result?.id);
     if (newuser.success) {
       setTimeout(() => {
         navigate("/validation_code");
@@ -116,7 +116,7 @@ function Signup() {
       const data = await googleloginfunction(coderesponse);
       if (data?.success) {
         SetTokenFromCoockies(data?.authtoken);
-        sessionStorage.setItem("session_id", data?.result?.id);
+        localStorage.setItem("session_id", data?.result?.id);
         setTimeout(() => {
           window.location.replace("/");
         }, 300);
