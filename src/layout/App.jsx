@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Signup from "../pages/CreateUser";
 import Otpvarification from "../pages/Otpvarification";
 import Login from "../pages/Login";
@@ -27,23 +27,13 @@ function App() {
 
   useEffect(() => {
     connect();
-  }, [localStorage.getItem("session_id")]);
+  }, [sessionStorage.getItem("session_id")]);
 
   const [animate, setanimate] = useState(false);
 
   setTimeout(() => {
     setanimate(true);
   }, 700);
-
-  const ws = new WebSocket("ws://localhost:5000");
-
-  ws.addEventListener("open", () => {
-    console.log("Connected to WebSocket server");
-  });
-
-  ws.addEventListener("message", (data) => {
-    // console.log(data.data);
-  });
 
   return (
     <>

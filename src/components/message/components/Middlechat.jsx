@@ -23,7 +23,7 @@ function Middlechat() {
     clearTimeout(typingTimeout);
 
     let obj = {
-      user: JSON.parse(localStorage.getItem("user")),
+      user: localStorage.getItem("session_id"),
       id: conversation.id,
     };
 
@@ -46,6 +46,7 @@ function Middlechat() {
 
   useEffect(() => {
     socket.current.on("show-user-typing", (data) => {
+      console.log(data);
       setisUserTyping(data);
       setisTyping(true);
     });
@@ -115,13 +116,13 @@ function Middlechat() {
               <div className="middle_messaging_area">
                 <div className="middle_messaging_sub_area">
                   <div className="user_messages">
-                    {<ShowMessages />}
-                    {isUserTyping?.user.id === conversation.id &&
+                    {/* {<ShowMessages />} */}
+                    {isUserTyping?.user === conversation?.id &&
                     isUserTyping?.id === localStorage.getItem("session_id") ? (
                       isTyping ? (
                         <div className="user_typing_sec">
                           <div className="fgf">
-                            <Avatar src={isUserTyping.user.avatar} />
+                            <Avatar src={isUserTyping?.user?.avatar} />
                           </div>
                           <span>
                             <Messagesloader />
@@ -169,7 +170,7 @@ function Middlechat() {
                       size="small"
                       label="Send a Message"
                       sx={{ width: "100%" }}
-                      onChange={handlekeyup}
+                      onKeyUp={handlekeyup}
                       multiline
                       maxRows={4}
                     />
